@@ -17,65 +17,71 @@ const chapters = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#f9f5f0] pb-20">
-      {/* 标题栏 */}
-      <div className="text-center py-12 px-6">
-        <motion.h1 
-          initial={{ opacity: 0, y: -20 }}
+    <div className="min-h-screen bg-[#f9f4eb] pb-20 overflow-hidden">
+      {/* 顶部装饰 */}
+      <div className="h-2 bg-gradient-to-r from-[#e8d5b8] via-[#c8b59a] to-[#e8d5b8]"></div>
+
+      {/* 标题区 */}
+      <div className="text-center pt-16 pb-10 px-6">
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl font-bold text-[#3f2e1e] mb-3 tracking-wide"
+          transition={{ duration: 1 }}
         >
-          数绘
-        </motion.h1>
-        <p className="text-xl text-[#6b5a42] max-w-md mx-auto">
-          把小学数学，拼成一本会发光的绘本
-        </p>
+          <div className="inline-block px-8 py-2 bg-white/70 rounded-3xl mb-6 shadow-inner">
+            <span className="text-4xl">📖</span>
+          </div>
+          <h1 className="title-font text-6xl text-[#3f2e1e] tracking-tight mb-4">
+            数绘
+          </h1>
+          <p className="text-2xl text-[#6b5a42] max-w-lg mx-auto leading-relaxed">
+            把小学数学，<br />拼成一本会发光的绘本
+          </p>
+        </motion.div>
       </div>
 
-      {/* 知识地图 */}
+      {/* 知识拼图地图 */}
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {chapters.map((chapter, index) => (
             <motion.div
               key={chapter.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.08 }}
+              initial={{ opacity: 0, scale: 0.8, y: 40 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ delay: index * 0.07, duration: 0.6 }}
             >
               <Link href={chapter.unlocked ? `/mosaic/${chapter.id}` : '#'}>
-                <div className={`dream-paper dream-card rounded-3xl p-8 h-full flex flex-col relative overflow-hidden
-                  ${chapter.unlocked ? 'cursor-pointer hover:shadow-2xl' : 'opacity-60 grayscale'}`}
-                  style={{ borderColor: chapter.color + '88' }}
+                <div 
+                  className={`dream-paper dream-card p-8 h-full flex flex-col relative
+                    ${chapter.unlocked ? 'cursor-pointer glow' : 'grayscale opacity-75'}`}
+                  style={{ 
+                    borderColor: chapter.color + '99',
+                    background: 'linear-gradient(135deg, #fffdf4 0%, #fef9eb 100%)'
+                  }}
                 >
-                  {/* 发光效果 */}
-                  {chapter.unlocked && chapter.progress > 60 && (
-                    <div className="absolute -right-6 -top-6 w-24 h-24 bg-white/30 rounded-full blur-3xl"></div>
-                  )}
-
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="text-5xl">{chapter.emoji}</div>
-                    <div>
-                      <div className="text-sm text-[#8b6f47] font-medium">第 {chapter.id.slice(2)} 章</div>
-                      <h3 className="text-2xl font-semibold text-[#3f2e1e] leading-tight">
+                  <div className="flex items-start gap-5">
+                    <div className="text-6xl drop-shadow-sm">{chapter.emoji}</div>
+                    <div className="flex-1 pt-2">
+                      <div className="text-xs tracking-widest text-[#8b6f47] mb-1">第六册 · 第{chapter.id.slice(2)}章</div>
+                      <h3 className="title-font text-2xl leading-tight text-[#3f2e1e] pr-6">
                         {chapter.title}
                       </h3>
                     </div>
                   </div>
 
-                  {/* 进度环 */}
-                  <div className="mt-auto flex items-center gap-4">
-                    <div className="relative w-16 h-16">
-                      <svg className="w-16 h-16 -rotate-12" viewBox="0 0 42 42">
-                        <circle cx="21" cy="21" r="15" fill="none" stroke="#e8d5b8" strokeWidth="6"/>
-                        <circle 
-                          cx="21" 
-                          cy="21" 
-                          r="15" 
-                          fill="none" 
-                          stroke={chapter.color} 
-                          strokeWidth="6"
-                          strokeDasharray={`${chapter.progress} 100`}
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                      <div className="absolute inset-0 flex items-center justify-center text-xs font-bold text-[#3f2e1e]">
+                  <div className="mt-auto pt-8 flex items-center gap-4">
+                    <div className="flex-1 h-2.5 bg-[#e8d5b8] rounded-full overflow-hidden">
+                      <div 
+                        className="h-full rounded-full transition-all duration-700"
+                        style={{ 
+                          width: `${chapter.progress}%`,
+                          background: `linear-gradient(to right, ${chapter.color}, #c8e6d4)`
+                        }}
+                      />
+                    </div>
+                    <div className="text-right w-12">
+                      <span className="text-3xl font-light text-[#6b5a42]">{chapter.progress}</span>
+                      <span className="text-xs text-[#8b6f47]">%</span>
+                    </div>
+                  </div>
+
