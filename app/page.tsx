@@ -18,7 +18,6 @@ const chapters = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#f8f2e9]">
-      {/* 顶部装饰条 */}
       <div className="h-3 bg-gradient-to-r from-[#d4b8a0] via-[#e8d5b8] to-[#d4b8a0]"></div>
 
       <div className="max-w-5xl mx-auto px-6 pt-16 pb-24">
@@ -44,7 +43,7 @@ export default function Home() {
               key={chapter.id}
               initial={{ opacity: 0, scale: 0.85, y: 40 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ delay: index * 0.065 }}
+              transition={{ delay: index * 0.07 }}
             >
               <Link href={chapter.unlocked ? `/mosaic/${chapter.id}` : '#'}>
                 <div className={`dream-paper dream-card p-9 h-full flex flex-col relative ${chapter.unlocked ? 'glow' : 'grayscale-[30%]'}`}>
@@ -52,7 +51,9 @@ export default function Home() {
                     <div className="text-6xl drop-shadow-sm transition-transform hover:scale-110">{chapter.emoji}</div>
                     
                     <div className="flex-1">
-                      <div className="text-xs uppercase tracking-[2px] text-[#9c8663] mb-2">六年级下册 · 第{chapter.id.slice(2)}章</div>
+                      <div className="text-xs uppercase tracking-[2px] text-[#9c8663] mb-2">
+                        六年级下册 · 第{chapter.id.slice(2)}章
+                      </div>
                       <h3 className="title-font text-2xl leading-tight text-[#3f2e1e] pr-4">
                         {chapter.title}
                       </h3>
@@ -74,7 +75,7 @@ export default function Home() {
                         }}
                       />
                     </div>
-                  </div>
+</div>
 
                   {!chapter.unlocked && (
                     <div className="absolute bottom-8 right-8 text-4xl opacity-20">🔒</div>
@@ -86,7 +87,7 @@ export default function Home() {
         </div>
       </div>
 
-<div className="text-center text-[#a38d6e] text-sm py-12">
+      <div className="text-center text-[#a38d6e] text-sm py-12">
         数绘 v0.3 · 绘本风知识拼图 · 持续绘制中...
       </div>
     </div>
