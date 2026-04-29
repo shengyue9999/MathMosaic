@@ -84,4 +84,20 @@ export default function Home() {
                       <span className="text-xs text-[#8b6f47]">%</span>
                     </div>
                   </div>
+{!chapter.unlocked && (
+                    <div className="absolute top-6 right-6 text-2xl opacity-30">🔒</div>
+                  )}
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      <div className="text-center text-[#9c8663] text-sm mt-20">
+        数绘 v0.2 · 目前仅六年级下册 · 欢迎一起把这本绘本继续画完
+      </div>
+    </div>
+  );
+}
 
