@@ -5,18 +5,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap');
 
 body {
-  background: #f8f2e9;
+  background: #f8f1e7;
   font-family: 'Noto Sans SC', system-ui, sans-serif;
   color: #3f2e1e;
 }
 
 .dream-paper {
-  background: linear-gradient(135deg, #fffdf4 0%, #fef8eb 100%);
+  background: linear-gradient(135deg, #fffcf2 0%, #fef9ec 100%);
   border: 1px solid #e8d9c4;
   box-shadow: 
-    0 20px 40px -15px rgba(62, 45, 29, 0.18),
-    inset 0 3px 12px rgba(255, 255, 255, 0.85),
-    inset 0 -4px 10px rgba(139, 111, 71, 0.1);
+    0 22px 45px -12px rgba(62, 45, 29, 0.22),
+    inset 0 4px 12px rgba(255,255,255,0.9),
+    inset 0 -5px 12px rgba(139, 111, 71, 0.12);
   border-radius: 28px;
   position: relative;
   overflow: hidden;
@@ -26,7 +26,9 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.75) 0%, transparent 50%);
+  background: 
+    radial-gradient(circle at 25% 20%, rgba(255,255,255,0.75) 0%, transparent 50%),
+    repeating-linear-gradient(145deg, transparent, transparent 2px, rgba(139,111,71,0.03) 2px, rgba(139,111,71,0.03) 6px);
   pointer-events: none;
   z-index: 1;
 }
@@ -37,21 +39,21 @@ body {
 }
 
 .dream-card:hover {
-  transform: scale(1.09) rotate(2.5deg);
-  box-shadow: 0 35px 70px -15px rgba(168, 85, 97, 0.35);
+  transform: scale(1.085) rotate(2deg);
+  box-shadow: 0 35px 75px -15px rgba(168, 85, 97, 0.38);
 }
 
 .glow {
-  animation: dream-glow 5s ease-in-out infinite alternate;
+  animation: dream-glow 6s ease-in-out infinite alternate;
 }
 
 @keyframes dream-glow {
   from { box-shadow: 0 0 20px -5px rgb(168 213 186); }
-  to { box-shadow: 0 0 55px 25px rgb(168 213 186 / 0.55); }
+  to { box-shadow: 0 0 60px 25px rgb(168 213 186 / 0.55); }
 }
 
 .title-font {
   font-family: 'Noto Serif SC', serif;
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
 }
