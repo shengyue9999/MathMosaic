@@ -2,6 +2,7 @@ grade: 六年级
 semester: 下册
 version: "v0.1"
 last_updated: "2026-04-29"
+textbook: "人教版"
 
 chapters:
   - id: ch1
@@ -13,7 +14,6 @@ chapters:
     unlocked: true
     progress: 75
     prerequisites: []
-    
     sections:
       - type: basics
         title: 基础概念
@@ -22,30 +22,25 @@ chapters:
           - "分子表示取的份数，分母表示平均分的份数"
           - "分数单位：把单位1平均分成若干份，这样的一份叫做分数单位"
           - "同分母分数可以直接比较大小"
-      
       - type: formulas
         title: 必会公式和规律
         items:
           - "约分：分子和分母同时除以它们的公约数"
           - "最简分数：分子和分母只有公因数1的分数"
           - "通分：把异分母分数化成同分母的分数"
-      
       - type: mistakes
         title: 常见易错点
         items:
-          - "比较3/4和5/6大小时直接比较分子或分母"
-          - "约分时没有除以最大公约数，导致结果不是最简分数"
-          - "把带分数化假分数时忘记乘整数部分"
-      
+          - "比较分数大小时直接比较分子或分母（未通分）"
+          - "约分时没有除以最大公约数"
+          - "带分数化假分数时漏乘整数部分"
       - type: examples
         title: 经典例题与技巧
         items:
           - "把7/8和5/6化成同分母比较大小（找最小公倍数）"
-          - "约分技巧：先找分子分母的公因数"
-
     connections:
       - target: ch2
-        reason: "分数加减法必须先通分"
+        reason: "分数加减法必须先通分或约分"
         strength: "strong"
 
   - id: ch2
@@ -57,7 +52,6 @@ chapters:
     unlocked: false
     progress: 30
     prerequisites: ["ch1"]
-    
     sections:
       - type: basics
         title: 基础概念
@@ -71,8 +65,79 @@ chapters:
       - type: examples
         title: 经典例题与技巧
         items: []
-    
     connections:
       - target: ch3
-        reason: "分数乘除法建立在加减法基础上"
+        reason: "分数乘除法是建立在加减法熟练基础上的"
         strength: "medium"
+
+  - id: ch3
+    title: 分数乘法和除法
+    emoji: "🌈"
+    color: "#b8d4f0"
+    illustration: "ch3-fraction-rainbow.png"
+    difficulty: 4
+    unlocked: false
+    progress: 10
+    prerequisites: ["ch2"]
+    sections: []
+    connections: []
+
+  - id: ch4
+    title: 圆
+    emoji: "⭕️"
+    color: "#f7d9a8"
+    illustration: "ch4-circle.png"
+    difficulty: 3
+    unlocked: false
+    progress: 20
+    prerequisites: ["ch3"]
+    sections: []
+    connections: []
+
+  - id: ch5
+    title: 百分数
+    emoji: "%"
+    color: "#e8b4d8"
+    illustration: "ch5-percent.png"
+    difficulty: 3
+    unlocked: false
+    progress: 15
+    prerequisites: ["ch1"]
+    sections: []
+    connections: []
+
+  - id: ch6
+    title: 统计
+    emoji: "📊"
+    color: "#9ed8c8"
+    illustration: "ch6-statistics.png"
+    difficulty: 2
+    unlocked: false
+    progress: 25
+    prerequisites: []
+    sections: []
+    connections: []
+
+  - id: ch7
+    title: 数学广角
+    emoji: "🧠"
+    color: "#d4b8f0"
+    illustration: "ch7-math-angle.png"
+    difficulty: 4
+    unlocked: false
+    progress: 5
+    prerequisites: ["ch4", "ch5"]
+    sections: []
+    connections: []
+
+  - id: ch8
+    title: 整理和复习
+    emoji: "📚"
+    color: "#f0c8a8"
+    illustration: "ch8-review.png"
+    difficulty: 1
+    unlocked: false
+    progress: 0
+    prerequisites: []
+    sections: []
+    connections: []
