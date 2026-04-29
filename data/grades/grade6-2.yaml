@@ -166,7 +166,7 @@ chapters:
         title: 基础概念
         items:
           - "百分数是分母为 100 的分数"
-- "百分数、分数、小数可以互化"
+          - "百分数、分数、小数可以互化"
       - type: formulas
         title: 必会公式
         items:

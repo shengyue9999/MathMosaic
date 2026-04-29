@@ -1,21 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@import "tailwindcss";
+@config '../tailwind.config.ts';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap');
+
+/* ============================================================
+   Base styles
+   ============================================================ */
 
 body {
   background: #f8f1e7;
   font-family: 'Noto Sans SC', system-ui, sans-serif;
   color: #3f2e1e;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* ============================================================
+   Dream card system — paper texture + glow + hover
+   ============================================================ */
 
 .dream-paper {
   background: linear-gradient(135deg, #fffcf2 0%, #fef9ec 100%);
   border: 1px solid #e8d9c4;
-  box-shadow: 
+  box-shadow:
     0 22px 45px -12px rgba(62, 45, 29, 0.22),
-    inset 0 4px 12px rgba(255,255,255,0.9),
+    inset 0 4px 12px rgba(255, 255, 255, 0.9),
     inset 0 -5px 12px rgba(139, 111, 71, 0.12);
   border-radius: 28px;
   position: relative;
@@ -26,9 +34,9 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: 
-    radial-gradient(circle at 25% 20%, rgba(255,255,255,0.75) 0%, transparent 50%),
-    repeating-linear-gradient(145deg, transparent, transparent 2px, rgba(139,111,71,0.03) 2px, rgba(139,111,71,0.03) 6px);
+  background:
+    radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.75) 0%, transparent 50%),
+    repeating-linear-gradient(145deg, transparent, transparent 2px, rgba(139, 111, 71, 0.03) 2px, rgba(139, 111, 71, 0.03) 6px);
   pointer-events: none;
   z-index: 1;
 }
@@ -52,8 +60,35 @@ body {
   to { box-shadow: 0 0 60px 25px rgb(168 213 186 / 0.55); }
 }
 
+/* ============================================================
+   Typography
+   ============================================================ */
+
 .title-font {
   font-family: 'Noto Serif SC', serif;
   font-weight: 700;
   letter-spacing: -0.03em;
+}
+
+/* ============================================================
+   Skeleton animation
+   ============================================================ */
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-pulse {
+  animation: skeleton-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ============================================================
+   Mobile adjustments
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .dream-card:hover {
+    transform: scale(1.03) rotate(1deg);
+  }
 }
