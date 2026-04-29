@@ -15,11 +15,12 @@ const config: Config = {
           softgreen: "#a8d5ba",
           softblue: "#b8d4f0",
           softpink: "#f4c2c2",
+          softyellow: "#f7d9a8",
         },
       },
       fontFamily: {
         sans: ["Noto Sans SC", "system-ui", "sans-serif"],
-        title: ["Noto Serif SC", "serif"],
+        serif: ["Noto Serif SC", "serif"],
       },
     },
   },
