@@ -1,0 +1,78 @@
+grade: 六年级
+semester: 下册
+version: "v0.1"
+last_updated: "2026-04-29"
+
+chapters:
+  - id: ch1
+    title: 分数的意义和性质
+    emoji: "🍭"
+    color: "#a8d5ba"
+    illustration: "ch1-fraction-kingdom.png"
+    difficulty: 2
+    unlocked: true
+    progress: 75
+    prerequisites: []
+    
+    sections:
+      - type: basics
+        title: 基础概念
+        items:
+          - "分数表示把单位“1”平均分成若干份，取其中的一份或几份"
+          - "分子表示取的份数，分母表示平均分的份数"
+          - "分数单位：把单位1平均分成若干份，这样的一份叫做分数单位"
+          - "同分母分数可以直接比较大小"
+      
+      - type: formulas
+        title: 必会公式和规律
+        items:
+          - "约分：分子和分母同时除以它们的公约数"
+          - "最简分数：分子和分母只有公因数1的分数"
+          - "通分：把异分母分数化成同分母的分数"
+      
+      - type: mistakes
+        title: 常见易错点
+        items:
+          - "比较3/4和5/6大小时直接比较分子或分母"
+          - "约分时没有除以最大公约数，导致结果不是最简分数"
+          - "把带分数化假分数时忘记乘整数部分"
+      
+      - type: examples
+        title: 经典例题与技巧
+        items:
+          - "把7/8和5/6化成同分母比较大小（找最小公倍数）"
+          - "约分技巧：先找分子分母的公因数"
+
+    connections:
+      - target: ch2
+        reason: "分数加减法必须先通分"
+        strength: "strong"
+
+  - id: ch2
+    title: 分数加法和减法
+    emoji: "🍪"
+    color: "#f4c2c2"
+    illustration: "ch2-fraction-cookies.png"
+    difficulty: 3
+    unlocked: false
+    progress: 30
+    prerequisites: ["ch1"]
+    
+    sections:
+      - type: basics
+        title: 基础概念
+        items: []
+      - type: formulas
+        title: 必会公式和规律
+        items: []
+      - type: mistakes
+        title: 常见易错点
+        items: []
+      - type: examples
+        title: 经典例题与技巧
+        items: []
+    
+    connections:
+      - target: ch3
+        reason: "分数乘除法建立在加减法基础上"
+        strength: "medium"
